@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="h-screen w-full bg-gray-400 flex justify-center items-center">
+        <div class="flex p-10 flex-col bg-white rounded-xl min-h-[200px] shadow-xl text-gray-800">
+            <h1
+                class=" bg-clip-text text-7xl bg-gradient-to-r from-blue-500  to-blue-700 text-transparent  font-bold font-serif">
+                Digitl Clock</h1>
+            <div id="clock"
+                class="text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500  to-blue-700 font-bold text-center mt-10">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let clock = document.getElementById("clock")
+
+        const startTime = () => {
+
+            const date = new Date()
+            const currentTime = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`
+            clock.textContent = currentTime
+            setTimeout(startTime, 1);
+
+        }
+
+        startTime()
+
+
+    </script>
+</body>
+
+</html>
